@@ -1,0 +1,52 @@
+<head>
+    <style>
+        table, th, td {  
+    border: 1px solid black;  
+    border-collapse: collapse;  
+}  
+th, td {  
+    padding: 10px;  
+}  
+table#alter tr:nth-child(even) {  
+    background-color: #eee;  
+}  
+table#alter tr:nth-child(odd) {  
+    background-color: #fff;  
+}  
+table#alter th {  
+    color: white;  
+    background-color: gray;  
+}  ng
+        /* tr:nth-child(even) {background-color: #bd9b9b;} */
+    </style>
+</head>
+<p>cart works!</p>
+<table id="alter">
+    <thead>
+        <th >prod_ID</th>
+        <th >prod_Name</th>
+        <th >prod_quantity</th>
+        <th >prod_price</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let a of cart">
+            <th >{{a.prod_ID}}</th>
+            <td>{{a.prod_Name}}</td>
+            <td>{{a.prod_quantity}}</td>
+            <td>{{a.prod_price}}</td>
+        </tr>
+        <!-- <tr>
+            <th scope="row">2</th>
+            <td>T-Shirt</td>
+            <td>1</td>
+            <td>599</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Jeans</td>
+            <td>1</td>
+            <td>699</td>
+        </tr> -->
+    </tbody>
+</table><br>
+<button style="color:#bd9b9b" routerLink="/carttotal">Check Out</button>

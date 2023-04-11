@@ -1,0 +1,22 @@
+
+<button (click)="displayEmployee()">Emp List</button>
+
+
+<table class="table table-bordered" *ngIf="employee && employee.length">
+    <thead>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Dept</th>
+        <th scope="col">Email</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employee">
+            <!-- <th scope="row">1</th> -->
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.dept}}</td>
+            <td>{{employee.email}}</td>
+        </tr>
+    </tbody>
+
+</table>

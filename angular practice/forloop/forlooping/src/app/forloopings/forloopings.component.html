@@ -1,0 +1,71 @@
+<head>
+    
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+        <style>
+            div{
+                font-size: 50px;
+            }
+        </style>
+    
+</head>
+<table class="table table-striped-columns">
+    <thead>
+        <tr>
+            <th scope="col">Employee_ID</th>
+            <th scope="col">Employee_Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let person of people">
+            <td scope="col">{{person.empid}}</td>
+            <td scope="col">{{person.name}}</td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+  <!-- <div *ngIf="isValid">
+     <b>The Data is valid.</b>
+  </div>  
+   
+  <div *ngIf="!isValid">
+     <b>The Data is invalid.</b>
+  </div> -->
+
+  <div>
+    <input type="radio" name="rb" (click)= "ChangeData(true)"  > Valid
+    <input type="radio" name="rb" (click)= "ChangeData(false)" > Invalid
+  </div>
+
+  <div *ngIf="isValid">
+     <b>The Data is valid.</b>
+  </div>  
+   
+  <div *ngIf="!isValid">
+     <b>The data is invalid.</b>
+  </div>
+
+
+  
+  <h2>Select Country</h2>
+
+<select (change)="SetDropDownValue($event)">
+  <option value="">Select</option>
+  <option value="In">In</option>
+  <option value="US">US</option>
+  <option value="UK">UK</option>
+</select>
+
+<!-- <h2>You Have Selected -->
+
+<div [ngSwitch] = 'dropDownValue'>
+  <h3 *ngSwitchCase="'In'">You Have Selected India</h3>
+  <h3 *ngSwitchCase="'US'">You Have Selected United States</h3>
+  <h3 *ngSwitchCase="'UK'">You Have Selected United Kingdom</h3>
+  <h3 *ngSwitchDefault="">You have not selected any country</h3>
+</div>
+
+<!-- </h2> -->
+  
+
